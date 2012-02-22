@@ -61,9 +61,11 @@ h2 {
   height: 60px;
   padding: 0 0 0 18px;
   margin: 0 0 10px 0;
-  font-size: 34px;
   width: 702px;
-  line-height: 60px;
+  font: italic 400 38px/1em "Gentium Book Basic", serif;
+  span {
+    font: 800 34px/60px "Open Sans", sans-serif;
+  }
 }
 
 ul {
