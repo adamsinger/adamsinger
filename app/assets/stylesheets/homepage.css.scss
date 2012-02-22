@@ -1,0 +1,116 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@-webkit-keyframes spin {
+  from    { -webkit-transform: perspective(50) rotateY(0deg); }
+  to    { -webkit-transform: perspective(50) rotateY(360deg); }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+#back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -99999;
+  img {
+    position: absolute;
+    display: block;
+  }
+}
+
+#me {
+  margin-left: 30px;
+}
+
+h1, h2, li {
+  font: 800 60px/1em "Open Sans", sans-serif;
+  background: black;
+  color: white;
+  text-rendering: optimizeLegibility;
+  margin-left: 30px;
+  .small {
+    font: italic 400 60px/1em "Gentium Book Basic", serif;
+  }
+}
+
+hgroup {
+  padding-bottom: 150px;
+}
+
+h1 {
+  height: 80px;
+  padding: 12px 0 6px 18px;
+  margin: 30px 0 40px 0;
+  width: 702px;
+  .name {
+    font-size: 68px;
+    line-height: 68px;
+    text-transform: uppercase;
+  }
+}
+
+h2 {
+  height: 60px;
+  padding: 0 0 0 18px;
+  margin: 0 0 10px 0;
+  font-size: 34px;
+  width: 702px;
+  line-height: 60px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background: rgba(0, 0, 0, 0.75);
+  list-style: none;
+  margin: 0 0 10px 0;
+  height: 60px;
+  font: italic 400 34px/60px " Gentium Book Basic", serif;
+  width: 444px;
+  a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0 0 0 18px;
+    .icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      float: left;
+      margin-top: 18px;
+      background: image-url("sprite.png") no-repeat left top;
+      margin-right: 18px;
+    }
+    .twitter {
+      background-position: 0 0;
+    }
+
+    .linkedin {
+      background-position: -24px -24px;
+    }
+
+    .github {
+      background-position: -24px 0;
+    }
+
+    .blog {
+      background-position: 0 -24px;
+    }
+    &:hover .icon {
+      -webkit-animation: spin linear 2s infinite;
+    }
+  }
+}
+
+

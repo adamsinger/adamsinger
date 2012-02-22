@@ -1,0 +1,26 @@
+doctype html
+html(itemscope itemtype="http://schema.org/Person")
+  head
+    meta charset="utf-8"
+    meta itemprop="url" content="http://adamsinger.me"
+    meta name="description" content="I am a Tech Lead at Posterous. I make cool stuff in HTML5."
+    meta itemprop="description" content="I am a Tech Lead at Posterous. I make cool stuff in HTML5."
+    title Adam Singer
+    == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:800|Gentium+Book+Basic:400italic"
+    == stylesheet_link_tag "application"
+  body
+    #me
+      hgroup
+        h1 <span class="small">Hi, I'm</span> <span class="name" itemprop="name">Adam Singer</span>
+        h2 <span itemprop="jobTitle">Tech Lead</span> at <span itemprop="worksFor">Posterous</span>
+        h2 <span itemprop="nationality">Canadian</span>
+        h2 Doesn't live in an igloo
+      nav
+        ul
+          li== link_to "<span class='icon github'></span>github".html_safe, "http://github.com/adamsinger"
+          li== link_to "<span class='icon twitter'></span>Twitter".html_safe, "http://twitter.com/adamsingy"
+          li== link_to "<span class='icon linkedin'></span>LinkedIn".html_safe, "http://www.linkedin.com/in/adamjsinger"
+          li== link_to "<span class='icon blog'></span>Blog".html_safe, "http://singy.posterous.com"
+      == yield
+      #back
+    == javascript_include_tag "application"
