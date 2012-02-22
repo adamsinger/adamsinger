@@ -1,13 +1,15 @@
 doctype html
-html(itemscope itemtype="http://schema.org/Person")
+html(itemscope itemtype="http://schema.org/Person" dir="ltr" lang="en-US")
   head
     meta charset="utf-8"
+    title Adam Singer
     meta itemprop="url" content="http://adamsinger.me"
     meta name="description" content="I am a Tech Lead at Posterous. I make cool stuff in HTML5."
     meta itemprop="description" content="I am a Tech Lead at Posterous. I make cool stuff in HTML5."
-    title Adam Singer
     == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:800|Gentium+Book+Basic:400italic"
     == stylesheet_link_tag "application"
+    link rel="canonical" href="http://adamsinger.me/"
+    link rel="profile" href="http://gmpg.org/xfn/11"
   body
     #me
       hgroup
