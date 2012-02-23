@@ -26,4 +26,5 @@ html(itemscope itemtype="http://schema.org/Person" dir="ltr" lang="en-US")
           li= link_to "<span class='icon blog'></span>Blog".html_safe, "http://singy.posterous.com"
       == yield
       #back
+    == javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
     == javascript_include_tag "application"
