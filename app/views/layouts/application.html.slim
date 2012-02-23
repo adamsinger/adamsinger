@@ -10,7 +10,6 @@ html(itemscope itemtype="http://schema.org/Person" dir="ltr" lang="en-US")
     == stylesheet_link_tag "application"
     link rel="canonical" href="http://adamsinger.me/"
     link rel="profile" href="http://gmpg.org/xfn/11"
-    link rel="me" href="https://plus.google.com/117035469535953194260"
   body
     #me
       hgroup
@@ -20,10 +19,11 @@ html(itemscope itemtype="http://schema.org/Person" dir="ltr" lang="en-US")
         h2 I don't <span>live</span> in an <span>igloo</span> (anymore)
       nav
         ul
-          li= link_to "<span class='icon github'></span>github".html_safe, "http://github.com/adamsinger"
-          li= link_to "<span class='icon twitter'></span>Twitter".html_safe, "http://twitter.com/adamsingy"
-          li= link_to "<span class='icon linkedin'></span>LinkedIn".html_safe, "http://www.linkedin.com/in/adamjsinger"
+          li= link_to "<span class='icon github'></span>github".html_safe, "http://github.com/adamsinger", :rel => "me"
+          li= link_to "<span class='icon twitter'></span>Twitter".html_safe, "http://twitter.com/adamsingy", :rel => "me"
+          li= link_to "<span class='icon linkedin'></span>LinkedIn".html_safe, "http://www.linkedin.com/in/adamjsinger", :rel => "me"
           li= link_to "<span class='icon blog'></span>Blog".html_safe, "http://singy.posterous.com"
+          li= link_to "<span class='icon google'></span>Google+".html_safe, "https://plus.google.com/117035469535953194260/posts", :rel => "me"
       == yield
       #back
     == javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
