@@ -1,6 +1,5 @@
 class HomepageController < ApplicationController
-  caches_page :index
-  
   def index
+    response.headers["Cache-Control"] = "public, max-age=86400"
   end
 end
