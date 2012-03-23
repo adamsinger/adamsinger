@@ -27,6 +27,6 @@ development:
   adapter: postgresql
   encoding: utf8
   database: pg_development
-  username: about
+  username: asinger
   password:
   host: localhost

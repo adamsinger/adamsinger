@@ -1,4 +1,8 @@
 About::Application.routes.draw do
+  resources :posts
+
+  devise_for :users
+
   get "homepage/index"
   
   root :to => 'homepage#index'
