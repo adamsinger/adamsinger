@@ -7,27 +7,12 @@ html(itemscope itemtype="http://schema.org/Person" dir="ltr" lang="en-US")
     meta name="description" content="Adam Singer is a Tech Lead at Posterous. He makes cool stuff in HTML5, CSS, CoffeeScript, and Ruby."
     meta itemprop="description" content="Adam Singer is a Tech Lead at Posterous. He makes cool stuff in HTML5, CSS, CoffeeScript, and Ruby."
     == stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:800|Gentium+Book+Basic:400italic"
-    == stylesheet_link_tag "application"
-    link rel="canonical" href="http://adamsinger.me/"
+    == stylesheet_link_tag "blog"
     link rel="profile" href="http://gmpg.org/xfn/11"
-  body
-    #me
-      hgroup
-        h1 <span class="small">Hi, I'm</span> <span class="name" itemprop="name">Adam Singer</span>
-        h2 <span itemprop="jobTitle">Tech Lead</span> at <span itemprop="worksFor">Posterous</span>
-        h2 <span itemprop="nationality">Canadian</span>
-        h2 I don't <span>live</span> in an <span>igloo</span> (anymore)
-      nav
-        ul
-          li= link_to "<span class='icon github'></span>github".html_safe, "http://github.com/adamsinger", :rel => "me"
-          li= link_to "<span class='icon twitter'></span>Twitter".html_safe, "http://twitter.com/adamsingy", :rel => "me"
-          li= link_to "<span class='icon linkedin'></span>LinkedIn".html_safe, "http://www.linkedin.com/in/adamjsinger", :rel => "me"
-          li= link_to "<span class='icon blog'></span>Blog".html_safe, "http://singy.posterous.com", :rel => "me"
-          li= link_to "<span class='icon google'></span>Google+".html_safe, "https://plus.google.com/117035469535953194260", :rel => "me"
-      == yield
-      #back
+  body(class="#{yield :body_class}")
+    == yield
     == javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-    == javascript_include_tag "application"
+    == javascript_include_tag "posts"
     javascript:
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-29432266-1']);

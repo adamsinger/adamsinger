@@ -1,21 +1,7 @@
-= form_for @post do |f|
-  - if @post.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
-      ul
-        - @post.errors.full_messages.each do |message|
-          li = message
-
-  .field
-    = f.label :user
-    = f.text_field :user
-  .field
-    = f.label :body_markdown
-    = f.text_area :body_markdown
-  .field
-    = f.label :body_html
-    = f.text_area :body_html
-  .field
-    = f.label :title
-    = f.text_field :title
-  .actions = f.submit 'Save'
+- content_for(:body_class) { "post-editor" }
+.editor-interface
+  = form_for @post do |f|
+    = f.text_field :title, placeholder: "Your title here", class: "text"
+    /= f.text_area :body_markdown, placeholder: "Your body here"
+    #editor Your body here
+    = f.submit "Done"

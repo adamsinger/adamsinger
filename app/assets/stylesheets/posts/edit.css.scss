@@ -1,0 +1,59 @@
+.post-editor {
+  background: #2b2b2b;
+  color: #fff;
+  margin: 0;
+  .editor-interface {
+    width: 800px;
+    margin: 100px auto 0;
+  }
+  input.text, textarea, input[type=submit] {
+    display: block;
+    border: 0;
+    margin: 0 0 30px;
+    padding: 0;
+    background: #2b2b2b;
+    color: #fff;
+    font-size: 36px;
+    width: 800px;
+    &::-webkit-input-placeholder {
+      font-family: "Helvetica Neue";
+      font-weight: bold;
+      font-size: 40px;
+      color: #666;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  input.text {
+    font-weight: bold;
+  }
+  textarea {
+    font-family: Monaco;
+    font-size: 12px;
+    resize: none;
+  }
+  #editor {
+    width: 600px;
+    height: 500px;
+    position: relative;
+    left: -48px;
+  }
+  .ace--railscasts .ace_gutter {
+    background: none;
+    color: #666;
+  }
+  .ace--railscasts .ace_print_margin {
+    background: none;
+  }
+  .ace--railscasts .ace_gutter-layer .ace_gutter-cell {
+    padding-right: 20px;
+  }
+  input[type=submit] {
+    font-weight: bold;
+    background: #2b2b2b;
+    padding: 0;
+    color: #666;
+    width: auto;
+  }
+}
