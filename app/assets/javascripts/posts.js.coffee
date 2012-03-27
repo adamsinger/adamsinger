@@ -12,10 +12,17 @@ jQuery ->
   editor.setTheme("ace/theme/railscasts")
 
   MarkDownMode = require("ace/mode/markdown").Mode
-  editor.getSession().setMode(new MarkDownMode)
-  editor.getSession().setTabSize(2)
-  editor.getSession().setUseSoftTabs(true)
+  editor.getSession().setMode new MarkDownMode
+  editor.getSession().setTabSize 2
+  editor.getSession().setUseSoftTabs true
+  editor.getSession().setValue $("#post_body_markdown").val()
+  editor.getSession().setUseWrapMode true
 
-  $("#editor textarea").attr "name", "post[body_markdown]"
   $("form").submit -> 
-    $("#editor textarea").val editor.getSession().getValue()
+    $("#post_body_markdown").val editor.getSession().getValue()
+
+  $("input.publish").click ->
+    $("#post_is_draft").val(false)
+
+  $("input.draft").click ->
+    $("#post_is_draft").val(true)

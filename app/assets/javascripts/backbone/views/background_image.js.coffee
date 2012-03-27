@@ -19,7 +19,6 @@ window.BackgroundImage = class BackgroundImage extends Backbone.View
     @imageRatio = @imageWidth / @imageHeight
     @updateImageDimensions()
 
-
   updateImageDimensions: ->
     width = $(window).width()
     height = $(window).height()

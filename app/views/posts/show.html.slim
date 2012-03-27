@@ -1,18 +1,1 @@
-p#notice = notice
-
-p
-  strong User:
-  = @post.user
-p
-  strong Body markdown:
-  = @post.body_markdown
-p
-  strong Body html:
-  = @post.body_html
-p
-  strong Title:
-  = @post.title
-
-= link_to 'Edit', edit_post_path(@post)
-'|
-= link_to 'Back', posts_path
+= render @post

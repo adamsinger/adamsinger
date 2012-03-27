@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120326214817) do
+ActiveRecord::Schema.define(:version => 20120326230955) do
 
   create_table "content_parts", :force => true do |t|
     t.string   "type"
@@ -28,13 +28,15 @@ ActiveRecord::Schema.define(:version => 20120326214817) do
     t.text     "body_markdown"
     t.text     "body_html"
     t.string   "title"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.boolean  "is_draft"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "is_draft",      :default => true
     t.datetime "display_date"
+    t.string   "slug"
   end
 
   add_index "posts", ["is_draft", "display_date"], :name => "index_posts_on_is_draft_and_display_date", :order => {"display_date"=>:desc}
+  add_index "posts", ["slug"], :name => "index_posts_on_slug", :unique => true
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
   create_table "users", :force => true do |t|

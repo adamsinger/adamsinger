@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
   respond_to :html
-  before_filter :find_post, only: [:show, :edit, :destroy]
+
+  before_filter :authenticate_user!, only: [:edit, :destroy, :update, :new]
+  before_filter :find_post, only: [:show, :edit, :destroy, :update]
 
   def index
-    
+    @posts = Post.for_index 
   end
 
   def show
@@ -20,6 +22,11 @@ class PostsController < ApplicationController
 
   def edit
 
+  end
+  
+  def update
+    @post.update_attributes params[:post]
+    respond_with @post
   end
 
   def destroy

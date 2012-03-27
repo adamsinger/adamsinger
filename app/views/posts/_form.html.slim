@@ -1,7 +1,11 @@
 - content_for(:body_class) { "post-editor" }
 .editor-interface
   = form_for @post do |f|
+    = f.hidden_field :is_draft
+    = f.hidden_field :body_markdown
     = f.text_field :title, placeholder: "Your title here", class: "text"
     /= f.text_area :body_markdown, placeholder: "Your body here"
     #editor Your body here
-    = f.submit "Done"
+    .buttons.cf
+      = f.submit "Now", class: "publish"
+      = f.submit "Later", class: "draft"

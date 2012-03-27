@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   belongs_to :user
 
   before_save :markdown_to_html
@@ -6,11 +9,11 @@ class Post < ActiveRecord::Base
   validates :title,         presence: true
   validates :body_markdown, presence: true
 
-  scope :public, where(is_draft: false)
-  scope :newest, order(display_date: :desc)
+  scope :public, where("is_draft = ?", false)
+  scope :newest, order("display_date DESC")
 
   def self.for_index
-    self.all.public.newest
+    self.public.newest.all
   end
 
   private

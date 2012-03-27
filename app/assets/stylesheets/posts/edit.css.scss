@@ -28,6 +28,10 @@
   input.text {
     font-weight: bold;
   }
+  input[type=submit] {
+    float: left;
+    margin-right: 30px;
+  }
   textarea {
     font-family: Monaco;
     font-size: 12px;
